@@ -1,6 +1,8 @@
-@TodoApi_HostAddress = http://localhost:5004
+@TodoApi_HostAddress = http://echoapi.cloudapp.net/api
 
-GET {{TodoApi_HostAddress}}/weatherforecast/
+GET {{TodoApi_HostAddress}}/resource/?param1=hello
 Accept: application/json
+ocp-apim-subscription-key: ed4946d480484015899ff3a95e63e2ad
+
 
 ###
