@@ -16,6 +16,8 @@ spec:
     spec:
       containers:
       - name: todoapi-conatiner
-        image: sunbirdreg.azurecr.io/todoapi:latest
+        image: sunbirdreg.azurecr.io/todoapi
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: registrysecret
