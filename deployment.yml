@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todoapi-conatiner
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        image: sunbirdreg.azurecr.io/todoapi/todoapi:latest
         ports:
         - containerPort: 80
