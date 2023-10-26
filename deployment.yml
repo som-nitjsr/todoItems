@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todoapi-conatiner
-        image: sunbirdreg.azurecr.io/todoapi/todoapi:latest
+        image: sunbirdreg.azurecr.io/todoapi:latest
         ports:
         - containerPort: 80
