@@ -1,6 +1,6 @@
-@TodoApi_HostAddress = http://echoapi.cloudapp.net/api
+@TodoApi_HostAddress = https://learningapp.azure-api.net/echo
 
-GET {{TodoApi_HostAddress}}/resource/?param1=hello
+GET {{TodoApi_HostAddress}}/resource/?param1=test&param2=12
 Accept: application/json
 ocp-apim-subscription-key: ed4946d480484015899ff3a95e63e2ad
 
