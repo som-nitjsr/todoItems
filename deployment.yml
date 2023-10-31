@@ -21,3 +21,16 @@ spec:
         - containerPort: 80
       imagePullSecrets:
         - name: registrysecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todoapi-front
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: todoapi
