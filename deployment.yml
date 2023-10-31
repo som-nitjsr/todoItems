@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todoapi-conatiner
-        image: sunbirdreg.azurecr.io/todoapi
+        image: sunbirdreg.azurecr.io/todoapi:78bc3bbcb61c10c69f3a7587563fb3aeb9d5a4a3
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -29,9 +29,11 @@ metadata:
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 80
+    targetPort: 8080
+    nodePort: 30008
   selector:
     app: todoapi
     # this is private lb service
