@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todoapi-deployment-v2
+  name: todoapi-deployment
   labels:
     app: todoapi
-    version: v2
 spec:
   replicas: 1
   selector:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: todoapi-conatiner
-        image: sunbirdreg.azurecr.io/todoapi:78bc3bbcb61c10c69f3a7587563fb3aeb9d5a4a3
+        image: sunbirdreg.azurecr.io/todoapi:b1dab4190f18938dbf4b82f00f511e091afbcc79
         ports:
         - containerPort: 80
       imagePullSecrets:
@@ -27,8 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: todoapi-front
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+ 
 spec:
   type: NodePort
   ports:
