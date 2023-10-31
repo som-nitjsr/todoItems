@@ -34,3 +34,4 @@ spec:
   - port: 80
   selector:
     app: todoapi
+    # this is private lb service
