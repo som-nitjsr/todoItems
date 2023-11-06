@@ -1,8 +1,8 @@
-@TodoApi_HostAddress = https://jiodemoapi.azure-api.net/echo
+@TodoApi_HostAddress = https://jioapi.azure-api.net
 
-GET {{TodoApi_HostAddress}}/resource/?param1=test&param2=12
+GET {{TodoApi_HostAddress}}/api/todoitems
 Accept: application/json
-ocp-apim-subscription-key: 5cce3358f27c4a7bb99f7d50c8984591
+ocp-apim-subscription-key: 40b3df99e9d3403fb8c66cf11ea96866
 
 
 ###
