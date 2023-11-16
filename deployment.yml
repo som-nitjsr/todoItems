@@ -18,10 +18,30 @@ spec:
       containers:
       - name: todoapi-conatiner
         image: sunbirdreg.azurecr.io/todoapi:78bc3bbcb61c10c69f3a7587563fb3aeb9d5a4a3
+        resources:
+          requests:
+            cpu: 10m
+            memory: 128Mi
+          limits:
+            cpu: 10m
+            memory: 256Mi
         ports:
         - containerPort: 80
       imagePullSecrets:
         - name: registrysecret
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: todoapi-deployment-hpa
+spec:
+  maxReplicas: 10 # define max replica count
+  minReplicas: 1  # define min replica count
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: todoapi-deployment-v2
+  targetCPUUtilizationPercentage: 50 # target CPU utilization
 ---
 apiVersion: v1
 kind: Service
